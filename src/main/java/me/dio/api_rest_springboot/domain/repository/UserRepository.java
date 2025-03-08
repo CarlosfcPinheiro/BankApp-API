@@ -1,4 +1,4 @@
-package me.dio.api_rest_springboot.repository;
+package me.dio.api_rest_springboot.domain.repository;
 
 import me.dio.api_rest_springboot.domain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
