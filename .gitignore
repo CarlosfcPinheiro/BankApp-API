@@ -31,3 +31,18 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Other ###
+.gitattributes
+.gitattributes:Zone.Identifier
+.gitattributes:Zone.Identifier:Zone.Identifier
+.gitignore:Zone.Identifier
+.gitignore:Zone.Identifier:Zone.Identifier
+HELP.md:Zone.Identifier
+HELP.md:Zone.Identifier:Zone.Identifier
+mvnw.cmd:Zone.Identifier
+mvnw.cmd:Zone.Identifier:Zone.Identifier
+mvnw:Zone.Identifier
+mvnw:Zone.Identifier:Zone.Identifier
+pom.xml:Zone.Identifier
+pom.xml:Zone.Identifier:Zone.Identifier
