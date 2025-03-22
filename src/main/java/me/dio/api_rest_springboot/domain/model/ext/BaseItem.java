@@ -15,6 +15,7 @@ public abstract class BaseItem {
 
     private String description;
 
+    // Getter and Setters
     public Long getId() {
         return id;
     }
