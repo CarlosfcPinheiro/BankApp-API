@@ -2,14 +2,24 @@ package me.dio.api_rest_springboot.domain.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.List;
+import java.util.UUID;
+
+// Auto generate Getter and Setter with lombok
+@Getter
+@Setter
+// Jakarta/Hibernate annotation to entity identify
 @Entity(name = "tb_user")
 public class User {
 
+    // Getter and Setters
+    // id annotation identifier and GeneratedValue to Hibernate auto generation
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     private String name;
 
@@ -24,52 +34,4 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> News;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
-    public List<Feature> getFeatures() {
-        return features;
-    }
-
-    public void setFeatures(List<Feature> features) {
-        this.features = features;
-    }
-
-    public Card getCard() {
-        return card;
-    }
-
-    public void setCard(Card card) {
-        this.card = card;
-    }
-
-    public List<me.dio.api_rest_springboot.domain.model.News> getNews() {
-        return News;
-    }
-
-    public void setNews(List<me.dio.api_rest_springboot.domain.model.News> news) {
-        News = news;
-    }
 }

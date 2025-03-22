@@ -1,10 +1,15 @@
-package me.dio.api_rest_springboot.domain.model;
+package me.dio.api_rest_springboot.domain.model.ext;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @MappedSuperclass
 public abstract class BaseItem {
     @Id
@@ -14,29 +19,4 @@ public abstract class BaseItem {
     private String icon;
 
     private String description;
-
-    // Getter and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
