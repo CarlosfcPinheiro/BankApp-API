@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: bank-app
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:default}
