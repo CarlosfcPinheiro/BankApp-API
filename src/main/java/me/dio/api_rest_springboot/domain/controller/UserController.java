@@ -1,5 +1,6 @@
 package me.dio.api_rest_springboot.domain.controller;
 
+import me.dio.api_rest_springboot.domain.dto.UserDTO;
 import me.dio.api_rest_springboot.domain.service.UserService;
 import me.dio.api_rest_springboot.domain.model.User;
 
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
@@ -19,8 +21,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id){
-        User user = userService.findById(id);
+    public ResponseEntity<UserDTO> findById(@PathVariable UUID id){
+        UserDTO user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
 
