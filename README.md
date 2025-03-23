@@ -3,10 +3,15 @@ Aplicação desenvolvida durante o módulo *Desenvolvimento de APIs com Spring F
 
 ## 📖 Sumário
 - [1. Domínio da aplicação](#1--domínio-da-aplicação)
-  - [1.1 Descrição das entidades](#descrição-das-entidades)
-  - [1.2 Diagrama de classes](#descrição-das-entidades)
+  - [1.1 Descrição das entidades](#11-descrição-das-entidades)
+  - [1.2 Diagrama de classes](#12-diagrama-de-classes)
 - [2. Funcionalidades](#2--funcionalidades)
 - [3. Tecnologias](#3--tecnologias)
+- [4. Como rodar localmente?](#4--como-rodar-localmente)
+  - [4.1 Reqyisitos](#41-requisitos)
+  - [4.2 Clone o repositório GitHub](#42-clone-o-repositório-github)
+  - [4.3 Construa as imagens](#43-construa-as-imagens)
+  - [4.4 Crie e execute os containers](#44-crie-e-execute-os-containers)
 
 ## 1. 🌍 Domínio da aplicação
 O domínio da aplicação (contexto de uso real) busca abstrair componentes e funcionalidades de um aplicativo de banco, permitindo flexibilidade e transporte de dados.
@@ -70,3 +75,31 @@ Tecnologias utilizadas para desenvolvimento:
 - Spring Boot
 - Spring Data JPA
 - PostgreSQL ( SGBD ) 
+
+## 4. 🏠 Como rodar localmente
+Para rodar localmente, é necessário seguir alguns passos:
+
+### 4.1 Requisitos
+- Docker
+- Docker Desktop (Windows)
+- Git
+
+*obs. Caso o seu sistema operacional seja Windows, siga [esses passos para configuração do Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/).*
+
+### 4.2 Clone o repositório GitHub
+Execute o comando abaixo no diretório desejado:
+```bash
+git clone https://github.com/CarlosfcPinheiro/BankApp-API.git && cd BankApp-API
+```
+
+### 4.3 Construa as imagens
+Faça o build dos containers no docker-compose:
+```shell
+docker-compose build
+```
+
+### 4.4 Crie e execute os containers
+Execute os containers de aplicação e banco de dados:
+````shell
+docker-compose -p bankapp up -d
+````
