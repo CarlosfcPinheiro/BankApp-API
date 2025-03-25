@@ -12,6 +12,7 @@ Aplicação desenvolvida durante o módulo *Desenvolvimento de APIs com Spring F
   - [4.2 Clone o repositório GitHub](#42-clone-o-repositório-github)
   - [4.3 Construa as imagens](#43-construa-as-imagens)
   - [4.4 Crie e execute os containers](#44-crie-e-execute-os-containers)
+- [5. Documentação](#5--documentação)
 
 ## 1. 🌍 Domínio da aplicação
 O domínio da aplicação (contexto de uso real) busca abstrair componentes e funcionalidades de um aplicativo de banco, permitindo flexibilidade e transporte de dados.
@@ -103,3 +104,6 @@ Execute os containers de aplicação e banco de dados:
 ````shell
 docker-compose -p bankapp up -d
 ````
+
+## 5. 📝 Documentação
+A documentação da API foi feita com a especificação Swagger e está disponível na URI: ``/swagger-ui/index.html``
