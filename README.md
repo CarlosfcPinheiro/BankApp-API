@@ -8,7 +8,7 @@ Aplicação desenvolvida durante o módulo *Desenvolvimento de APIs com Spring F
 - [2. Funcionalidades](#2--funcionalidades)
 - [3. Tecnologias](#3--tecnologias)
 - [4. Como rodar localmente?](#4--como-rodar-localmente)
-  - [4.1 Reqyisitos](#41-requisitos)
+  - [4.1 Requisitos](#41-requisitos)
   - [4.2 Clone o repositório GitHub](#42-clone-o-repositório-github)
   - [4.3 Construa as imagens](#43-construa-as-imagens)
   - [4.4 Crie e execute os containers](#44-crie-e-execute-os-containers)
@@ -94,7 +94,7 @@ Para rodar localmente, é necessário seguir alguns passos:
 - Docker Desktop (Windows)
 - Git
 
-*obs. Caso o seu sistema operacional seja Windows, siga [esses passos para configuração do Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/).*
+*obs. Caso o seu sistema operacional seja Windows, siga esses passos para [configuração do Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/).*
 
 ### 4.2 Clone o repositório GitHub
 Execute o comando abaixo no diretório desejado:
