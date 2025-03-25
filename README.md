@@ -24,6 +24,7 @@ A seguir, estão as entidades que fazem parte do domínio da aplicação:
 - Feature ( Funcionalidade/Ação presente no aplicativo bancário )
 - Card ( Cartão possuído pelo usuário )
 - News ( Notícias presentes no aplicativo para visualização do usuário )
+- Pix ( Pix cadastrados pelo usuário )
 
 ### 1.2 Diagrama de classes
 
@@ -49,6 +50,13 @@ classDiagram
     -String description
   }
 
+  class Pix {
+    -UUID id;
+    -String key
+    -ENUM keyType;
+    -UUID user_id
+  }
+
   class Card {
     -String number
     -Number limit
@@ -63,6 +71,7 @@ classDiagram
   User "1" *-- "N" Feature
   User "1" *-- "1" Card
   User "1" *-- "N" News
+  User "1" *-- "N" Pix
 ```
 
 ## 2. ⚙️ Funcionalidades
