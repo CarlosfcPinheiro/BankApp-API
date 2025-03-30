@@ -29,9 +29,12 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Feature> features;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<News> News;
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Pix> pixList;
 }
