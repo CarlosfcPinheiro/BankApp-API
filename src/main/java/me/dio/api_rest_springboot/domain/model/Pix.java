@@ -17,13 +17,15 @@ public class Pix {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private KeyTypeEnum keyType;
 
+    @Column(nullable = false)
     private String key;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId", nullable = false)
     private User user;
 
 }
