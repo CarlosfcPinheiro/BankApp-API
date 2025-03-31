@@ -1,6 +1,7 @@
 package me.dio.api_rest_springboot.domain.controller;
 
-import me.dio.api_rest_springboot.domain.dto.UserDTO;
+import me.dio.api_rest_springboot.domain.dto.user.UserRequestDTO;
+import me.dio.api_rest_springboot.domain.dto.user.UserResponseDTO;
 import me.dio.api_rest_springboot.domain.service.UserService;
 import me.dio.api_rest_springboot.domain.model.User;
 
@@ -21,13 +22,13 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDTO> findById(@PathVariable UUID id){
-        UserDTO user = userService.findById(id);
+    public ResponseEntity<UserResponseDTO> findById(@PathVariable UUID id){
+        UserResponseDTO user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
 
     @PostMapping
-    public ResponseEntity<User> save(@RequestBody User user){
+    public ResponseEntity<User> save(@RequestBody UserRequestDTO user){
         User newUser = userService.create(user);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")

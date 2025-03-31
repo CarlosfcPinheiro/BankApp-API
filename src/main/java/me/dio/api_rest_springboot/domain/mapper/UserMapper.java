@@ -1,14 +1,15 @@
 package me.dio.api_rest_springboot.domain.mapper;
 
-import me.dio.api_rest_springboot.domain.dto.UserDTO;
+import me.dio.api_rest_springboot.domain.dto.user.UserRequestDTO;
+import me.dio.api_rest_springboot.domain.dto.user.UserResponseDTO;
 import me.dio.api_rest_springboot.domain.model.User;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserMapper {
-    public UserDTO toUserDTO(User user){
-        UserDTO userDTO = new UserDTO();
+    public UserResponseDTO toUserResponseDTO(User user){
+        UserResponseDTO userDTO = new UserResponseDTO();
         userDTO.setId(user.getId());
         userDTO.setName(user.getName());
         userDTO.setAccount(user.getAccount());
@@ -17,7 +18,18 @@ public class UserMapper {
         return userDTO;
     }
 
-    public User toEntity(UserDTO userDTO){
+    public User toEntity(UserRequestDTO userRequestDTO){
+        User user = new User();
+        user.setName(userRequestDTO.getName());
+        user.setAccount(userRequestDTO.getAccount());
+        user.setCard(userRequestDTO.getCard());
+        user.setNews(userRequestDTO.getNews());
+        user.setFeatures(userRequestDTO.getFeatures());
+
+        return user;
+    }
+
+    public User toEntity(UserResponseDTO userDTO){
         User user = new User();
         user.setId(userDTO.getId());
         user.setName(userDTO.getName());
