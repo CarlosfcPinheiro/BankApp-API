@@ -1,19 +1,16 @@
 package me.dio.api_rest_springboot.domain.controller.exception;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.NoSuchElementException;
-import java.util.logging.Logger;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Creating exceptions
-    // take error with IllegalArgumentException
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<String> handle(IllegalArgumentException businessException){
         return new ResponseEntity<>(businessException.getMessage(), HttpStatus.UNPROCESSABLE_ENTITY);

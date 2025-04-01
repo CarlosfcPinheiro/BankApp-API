@@ -8,15 +8,11 @@ import lombok.Setter;
 import java.util.List;
 import java.util.UUID;
 
-// Auto generate Getter and Setter with lombok
 @Getter
 @Setter
-// Jakarta/Hibernate annotation to entity identify
 @Entity(name = "tb_user")
 public class User {
 
-    // Getter and Setters
-    // id annotation identifier and GeneratedValue to Hibernate auto generation
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
