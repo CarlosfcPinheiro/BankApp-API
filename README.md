@@ -81,10 +81,11 @@ Funcionalidades fornecidas pela API:
 
 ## 3. 💻 Tecnologias
 Tecnologias utilizadas para desenvolvimento:
-- Spring Framework ( Core )
-- Spring Boot
-- Spring Data JPA
-- PostgreSQL ( SGBD ) 
+- Spring Framework ( Framework Core da aplicação )
+- Maven ( Gerenciador de dependências )
+- Spring Boot ( Codebase da aplicação )
+- Spring Data JPA ( Integração e conexão com banco de dados )
+- PostgreSQL ( SGBD )
 
 ## 4. 🏠 Como rodar localmente
 Para rodar localmente, é necessário seguir alguns passos:
