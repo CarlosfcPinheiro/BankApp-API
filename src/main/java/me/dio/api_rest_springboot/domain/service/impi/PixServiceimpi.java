@@ -37,7 +37,6 @@ public class PixServiceimpi implements PixService {
 
     @Override
     public List<PixResponseDTO> findPixByUserId(UUID userId){
-        User user = userRepository.findById(userId).orElseThrow(NoSuchElementException::new);
         List<Pix> pixList = pixRepository.findAllByUserId(userId);
 
         List<PixResponseDTO> pixResponseDTOList = new ArrayList<>();
