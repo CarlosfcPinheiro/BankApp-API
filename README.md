@@ -13,6 +13,7 @@ Aplicação desenvolvida durante o módulo *Desenvolvimento de APIs com Spring F
   - [4.3 Construa as imagens](#43-construa-as-imagens)
   - [4.4 Crie e execute os containers](#44-crie-e-execute-os-containers)
 - [5. Documentação](#5--documentação)
+- [6 - To-do de features](#6--to-do-de-features)
 
 ## 1. 🌍 Domínio da aplicação
 O domínio da aplicação (contexto de uso real) busca abstrair componentes e funcionalidades de um aplicativo de banco, permitindo flexibilidade e transporte de dados.
@@ -117,3 +118,11 @@ docker-compose -p bankapp up -d
 
 ## 5. 📝 Documentação
 A documentação da API foi feita com a especificação Swagger e está disponível na URI: ``/swagger-ui/index.html``
+
+## 6. ✅ To-do de features
+A seguir, uma lista de funcionalidades que serão implementadas na aplicação
+- [ ] Rotas para as demais entidades
+- [ ] Adicionar entidade Transaction
+- [ ] Implementar outras layers para Transaction
+- [ ] Implementar Spring Security (barramento de rotas, token JWT)
+- [ ] Rotas de autenticação
