@@ -121,6 +121,7 @@ A documentação da API foi feita com a especificação Swagger e está disponí
 
 ## 6. ✅ To-do de features
 A seguir, uma lista de funcionalidades que serão implementadas na aplicação
+- [ ] Migração de banco de dados com Flyway
 - [ ] Rotas para as demais entidades
 - [ ] Adicionar entidade Transaction
 - [ ] Implementar outras layers para Transaction
