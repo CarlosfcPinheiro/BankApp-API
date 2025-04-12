@@ -3,6 +3,8 @@ package me.dio.api_rest_springboot.domain.controller;
 import me.dio.api_rest_springboot.domain.dto.user.UserRequestDTO;
 import me.dio.api_rest_springboot.domain.dto.user.UserResponseDTO;
 
+import me.dio.api_rest_springboot.domain.model.Feature;
+import me.dio.api_rest_springboot.domain.model.News;
 import me.dio.api_rest_springboot.domain.service.UserService;
 import me.dio.api_rest_springboot.domain.model.User;
 
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -26,6 +29,18 @@ public class UserController {
     public ResponseEntity<UserResponseDTO> findById(@PathVariable UUID id){
         UserResponseDTO user = userService.findById(id);
         return ResponseEntity.ok(user);
+    }
+
+    @GetMapping("/{id}/features")
+    public ResponseEntity<List<Feature>> getFeatures(@PathVariable UUID id){
+        List<Feature> features = userService.findAllUserFeatures(id);
+        return ResponseEntity.ok(features);
+    }
+
+    @GetMapping("/{id}/news")
+    public ResponseEntity<List<News>> getNews(@PathVariable UUID id){
+        List<News> news = userService.findAllUserNews(id);
+        return ResponseEntity.ok(news);
     }
 
     @PostMapping
