@@ -1,6 +1,5 @@
 package me.dio.api_rest_springboot.domain.service.impi;
 
-import jakarta.transaction.Transactional;
 import me.dio.api_rest_springboot.domain.dto.user.UserRequestDTO;
 import me.dio.api_rest_springboot.domain.dto.user.UserResponseDTO;
 
@@ -47,11 +46,13 @@ public class UserServiceimpi implements UserService {
         return userRepository.save(userToCreate);
     }
 
+    @Override
     public List<Feature> findAllUserFeatures(UUID id){
         User user = userRepository.findById(id).orElseThrow(NoSuchElementException::new);
         return user.getFeatures();
     }
 
+    @Override
     public List<News> findAllUserNews(UUID id){
         User user = userRepository.findById(id).orElseThrow(NoSuchElementException::new);
         return user.getNews();

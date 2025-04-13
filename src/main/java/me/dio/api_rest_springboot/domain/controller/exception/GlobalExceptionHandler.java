@@ -16,13 +16,11 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(businessException.getMessage(), HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    // take error with NoSuchElementException
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<String> handle(NoSuchElementException notFoundException){
         return new ResponseEntity<>("Resource ID not found", HttpStatus.NOT_FOUND);
     }
 
-    // take any error that is not mapped
     @ExceptionHandler(Throwable.class)
     public ResponseEntity<String> handle(Throwable unexpectedException){
         String message = "Unexpected server error, see the logs.";
