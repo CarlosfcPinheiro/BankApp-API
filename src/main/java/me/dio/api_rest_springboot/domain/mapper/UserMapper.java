@@ -7,6 +7,8 @@ import me.dio.api_rest_springboot.domain.model.User;
 
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Component
 public class UserMapper {
     public UserResponseDTO toUserResponseDTO(User user){
@@ -17,6 +19,15 @@ public class UserMapper {
         userDTO.setCard(user.getCard());
 
         return userDTO;
+    }
+
+    public UserResponseDTO toUserResponseDTO(UUID id, UserRequestDTO userRequestDTO){
+        UserResponseDTO userResponseDTO = new UserResponseDTO();
+        userResponseDTO.setId(id);
+        userResponseDTO.setName(userRequestDTO.getName());
+        userResponseDTO.setAccount(userRequestDTO.getAccount());
+        userResponseDTO.setCard(userRequestDTO.getCard());
+        return userResponseDTO;
     }
 
     public User toEntity(UserRequestDTO userRequestDTO){
