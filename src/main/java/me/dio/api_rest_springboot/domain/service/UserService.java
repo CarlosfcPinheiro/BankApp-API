@@ -18,4 +18,8 @@ public interface UserService {
     List<Feature> findAllUserFeatures(UUID id);
 
     List<News> findAllUserNews(UUID id);
+
+    void delete(UUID id);
+
+    UserResponseDTO update(UUID id, UserRequestDTO userRequest);
 }

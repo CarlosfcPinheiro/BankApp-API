@@ -57,4 +57,19 @@ public class UserServiceimpi implements UserService {
         User user = userRepository.findById(id).orElseThrow(NoSuchElementException::new);
         return user.getNews();
     }
+
+    @Override
+    public void delete(UUID id){
+        User user = userRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        userRepository.delete(user);
+    }
+
+    @Override
+    public UserResponseDTO update(UUID id, UserRequestDTO userRequest){
+        userRepository.findById(id).orElseThrow(NoSuchElementException::new);
+        User userToUpdate = userMapper.toEntity(userRequest);
+        userRepository.save(userToUpdate);
+
+        return userMapper.toUserResponseDTO(id, userRequest);
+    }
 }

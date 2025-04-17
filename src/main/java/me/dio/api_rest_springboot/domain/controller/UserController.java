@@ -52,4 +52,16 @@ public class UserController {
                 .toUri();
         return ResponseEntity.created(location).body(newUser);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable UUID id){
+        userService.delete(id);
+        return ResponseEntity.ok("User deleted successfully.");
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> update(@PathVariable UUID id, @RequestBody UserRequestDTO user){
+        UserResponseDTO userResponse = userService.update(id, user);
+        return ResponseEntity.ok(userResponse);
+    }
 }
