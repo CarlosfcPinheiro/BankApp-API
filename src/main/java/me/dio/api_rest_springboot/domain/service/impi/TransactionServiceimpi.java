@@ -15,7 +15,7 @@ import java.util.UUID;
 @Service
 public class TransactionServiceimpi implements TransactionService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public TransactionServiceimpi(UserRepository userRepository){
         this.userRepository = userRepository;
